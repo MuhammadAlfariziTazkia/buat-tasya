@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #fce4ec, #ffffff);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: #d81b60;
+            font-size: 2rem;
+        }
+
+        main {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .heart {
+            width: 50px;
+            height: 50px;
+            background-color: #d81b60;
+            transform: rotate(45deg);
+            margin: 2rem auto;
+            position: relative;
+            animation: pulse 1s infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            background-color: #d81b60;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart::before {
+            left: -25px;
+        }
+
+        .heart::after {
+            top: -25px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: rotate(45deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(45deg) scale(1.1);
+            }
+
+            100% {
+                transform: rotate(45deg) scale(1);
+            }
+        }
+
+        button {
+            background-color: #d81b60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ad1457;
+        }
+
+        .accordion {
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .accordion-item {
+            margin-bottom: 1rem;
+        }
+
+        .accordion-trigger {
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            background-color: #f8bbd0;
+            border: none;
+            color: #d81b60;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .accordion-trigger:hover {
+            background-color: #f48fb1;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 1rem;
+            background-color: #fff;
+            border: 1px solid #f8bbd0;
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        #fallingHearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .falling-heart {
+            position: absolute;
+            color: #d81b60;
+            font-size: 20px;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>
+        Jujur gua suka sama lo tas. <br>
+        Tapi ini gua bukan pengen ngajak pacaran ko.<br>
+        Kayanya sekarang ini lebih prefer buat skip pacaran, pengennya langsung ke yang serius aja hehe.<br>
+        Tapi engga sekarang atau waktu dekat juga sih wkwk.<br>
+        Mungkin 1-2 tahun kedepan, karna sekarang gua lagi ngumpulin uang buat nikah.<br>
+        Btw salah satu tujuan utama gua kerja diluar, sebenernya buat ngumpulin modal nikah wkwk.<br><br>
+
+        Sebenernya gua suka sama lo udah lumayan lama, dari sebelum gua berangkat kesini,<br>
+        bahkan sebelum lo ujian ke profesian itu gua udah suka sama lo tas, tapi ntah lo ngeh atau engga wkwk.<br>
+        Dan jauh sebelum itu, pas SMP gua juga sebenernya pernah suka sama lo tas, makanya sering ngajak main getrich kan,
+        walaupun itu ya masih suka-sukaan aja
+        sih wkwk.<br><br>
+
+        Tapi akhir-akhir ini gua baru kepikiran, apakah lo tipikal yang kalau berkeluarga bakal jadi wanita karir gitu,<br>
+        Ini lebih ke pikiran gua ajaa sih tas wkwk, walaupun gua sadar lo juga belum tentu ada perasaan yang sama.<br><br>
+
+        Karna sebenernya gua punya cita cita (atau biar keren, mari kita sebut dengan "visi") buat kerja diluar negeri.<br>
+        Tujuannya buat ngumpulin pengalaman, ngumpulin uang, dan nanti pas balik ke Indonesia, bisa dipake buat ngeboost karir. <br>
+        Bukan cuma jepang, tapi pengen berpetualang ke negara-negara lain juga wkwk.<br>
+        Walaupun sekarang pun Allah kasih jalan kaya gini aja gua udah bersyukur banget.<br>
+        Jadi misal setelah ini gua ga ada kesempatan buat ke negara lain lagi pun gamasalah, karna yang sekarang udah lebih dari cukup buat gua.<br>
+        Tapi saat ini gua jadiin itu sebagai tujuan, dan  nyoba usaha buat ngewujudin mimpi itu.<br><br>
+        
+        Rencana mungkin sekitar 5-10 tahunan pengen diluar, walaupun ini masih bisa berubah-ubah juga sih.<br><br>
+
+        Nah jadi karna gua rencana nikah di 1-2 tahun kedepan, berarti setelah itu pun kemunkinan masih beberapa tahun tinggal diluar,<br>
+        kalo misalkan ternyata visi lo adalah ingin jadi wanita karir,<br>
+        berarti ya keinginan gua buat nikah sama lo mungkin jadi agak sulit.<br>
+        Karna gua pengen kita sama-sama bisa ngejar mimpi yg kita pengen masing-masing.<br>
+        Jangan sampe karna nikah, salah satu harus jadi ngorbanin visinya gitu.<br><br>
+
+        Selain itu, setelah nikah nanti, gua punya preferensi kaya gini tas..<br>
+        Lebih prefer istri buat dirumah aja, dan ambil peran support.<br>
+        Ibarat main Mobile Legend, wkwk, kalo 1 tim isinya fighter semua ini agak susah.<br>
+        Perlu ada role yang bisa jadi rumah untuk fighter itu, bisa heal si fighter, biar bisa perang lagi kalo udah sehat.<br>
+        Walaupun kalo memang istri mau kerja, gapapa juga selama belum punya anak.<br><br>
+
+        Nah kalo misal udah ada anak, baru pengen nya istri dirumah ajaa,<br>
+        kalo pun mau kerja, kalo bisa kerja yang dari rumah gitu.<br>
+        Karna gua ngerasain dari kecil ditemenin sosok ibu, dan sangat bersyukur buat hal ini.<br>
+        Jadi pengen banget anak gua nantinya bisa ngerasain hal yang sama.<br>
+        Ada ibu nya setiap dia mau nanya, mau cerita, atau mau apapun itu.<br><br>
+
+        Nah jadi tas,
+    <ol>
+        <li>
+            Misal kan lo memang punya mimpi buat berkarir, berarti gua harus mundur wkwk. Tapi gua support bgt kok, karna ini emang jalan yg baik juga.
+        </li>
+        <li>
+            Misal mimpi lo bukan itu, hanya saja memang tida ada perasaan yang sama wkwk, abis ini gua bakal lanjut
+            upgrade diri sampe saatnya siap nikah nanti. Misal saat itu lo belum nikah, dan ternyata gua masih ada
+            perasaan sama lo, boleh kan gua dateng dan nanya hal ini lagi?
+        </li>
+        <li>
+            Tapi misal kalo lo ada perasaan yang sama, gua cuma pengen kita sama sama tau, sama sama jaga perasaan itu,
+            saling lanjut memantaskan diri lagi, sesekali chat kayak yg sekarang ini buat sekedar tuker kabar atau bahas
+            hal seru wkwk. Dan juga mungkin diskusi buat kedepannya.
+            Lo bisa nanya ke gua hal apapun, kalo memang bisa gua jawab, gua jawab apa adanya sejujur jujurnya.
+            Misal ada hal yang lo kurang srek dari gua, bisa kasih tau. Misal itu hal yang baik dan bisa gua perbaikin,
+            insyaallah gua perbaikin
+        </li>
+    </ol>
+
+    Oh iya, biasanya kalo orang ngajak yang beginian kan ada ngasih visi nikah yaak wkwk, jadi ini keluarga yang pengen gua
+    bangun tas.
+    <ol>
+        <li>
+            "<i>Together in endless happiness in heaven</i>". Anjay, ini emang agak klise, tapi buat gua memang tempat buat berbahagia ria itu di
+            surga nanti. Dan menurut gua ini bukan hal yang berat kok (teorinya).
+            Cukup ngejalanin yg wajib wajib, plus sunnah dikit dikit (banyak lebih bagus), dan ga ngelakuin yang
+            dosa-dosa.
+        </li>
+        <li>
+            Hidup tenang. Gua gaada tujuan buat jadi orang kaya raya, dari yang gua liat, orang kaya raya biasanya sibuk, jadi kek banyak uang tapi sedikit waktu buat nikmatin uangnya wkwk. <br/>
+            Jadi gua pengen punya uang yang cukup buat kebutuhan pokok, bisa hiburan atau belanja yang proper, dan bersyukur. <br>
+            Btw emak gua ngelarang buat bilang ini wkwk, gua pengen berkebun nanti kalo udah ada passive income yang
+            cukup wkwk, berkebun as a hobby aja, bukan kerjaan. Tapi ya ini cuma berandai-andai aja ko wkwk.
+        </li>
+        <li>
+            Belajar agama bareng-bareng, dan posisiin islam jadi life guide. Jadi kalo ada masalah seberat apapun, kita tau ada tempat bergantung,
+            dan juga punya arah gitu tentang apa yang perlu dilakuin
+        </li>
+        <li>
+            Keluarga yang didalemnya gaada kata kata kasar, gada bentak bentakan. Kalo emosi mending diem sebentar, tenangin diri, abis itu baru 
+            diskusi lagi pelan pelan. Tapi jangan sampe kalo ada masalah ditimbun ke hari hari berikutnya.
+        </li>
+        <li>
+            Apa lagi ya? ko dikit wkwk. ada tambahan tas?
+        </li>
+    </ol>
+    Walaupun mungkin nanti di kenyataannya ada yang ga semulus itu, tapi seengganya ini hal-hal yang pengen gua usahain
+    nantinya. <br><br>
+
+    Abis... <br><br>
+
+    Btw kalo lo udah baca ini, kasih tau ya tas, biar abis itu web nya gua jadiin private wkwkwk.
+    </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
